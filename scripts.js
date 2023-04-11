@@ -70,13 +70,13 @@ section h2 {
 }
 
 /* Skills */
-#tutorials ul {
+#AI ul {
   display: flex;
   flex-wrap: wrap;
   list-style-type: none;
 }
 
-#tutorials ul li {
+#AI ul li {
   background-color: #f4f4f4;
   padding: 1rem;
   margin-right: 1rem;
