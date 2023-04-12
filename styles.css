@@ -18,6 +18,14 @@ body {
   padding: 1rem;
 }
 
+
+.profile-image {
+  width: 300px; /* Adjust this value according to the desired size of the image */
+  height: auto;
+  border-radius: 50%; /* Creates a circular image; remove this line for a rectangular image */
+  margin-right: 20px;
+}
+
 /* Header */
 header {
   background-color: #333;
@@ -69,7 +77,7 @@ section h2 {
   margin-bottom: 1rem;
 }
 
-/* Skills */
+/* AI */
 #AI ul {
   display: flex;
   flex-wrap: wrap;
@@ -79,12 +87,56 @@ section h2 {
 #AI ul li {
   background-color: #f4f4f4;
   padding: 1rem;
-  margin-right: 1rem;
+  margin-right: 0rem;
   margin-bottom: 1rem;
-  border-radius: 5px;
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
+  border-bottom-left-radius: 0px;
+  border-bottom-right-radius: 0px;
 }
 
 /* Contact */
 #contact p {
   margin-bottom: 1rem;
 }
+
+
+.item {
+  margin-bottom: 1px; /* Adds space between each item */
+}
+
+.label {
+  display: inline-block;
+  width: 85px; /* Adjust this value to control the width of the label column */
+  text-align: right;
+  margin-right: 10px;
+}
+
+.value {
+  text-align: left;
+  color: black; /* Changes the text color of the values */
+}
+
+
+.tab-buttons ul {
+  list-style-type: none;
+  display: flex;
+  padding: 0;
+  color: black;
+}
+
+.tab-link {
+/*  width: 350px;*/
+  cursor: pointer;
+  font-weight: bold;
+  border: 1px solid #ccc;
+  border-bottom: 3px solid #aa88ee;
+}
+
+.tab-link.active {
+  color: #aa88ee; /* Text color for active tab */
+  font-weight: bold;
+  border: 3px solid #aa88ee;;
+  border-bottom: 1px solid #ccc;
+}
+

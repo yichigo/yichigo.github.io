@@ -1,90 +1,51 @@
-/* General styles */
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
+
+function showTabContent(tabId) {
+  const tabContents = document.getElementsByClassName('tab-content');
+  for (let i = 0; i < tabContents.length; i++) {
+    tabContents[i].style.display = 'none';
+  }
+
+  document.getElementById(tabId).style.display = 'block';
+  setActiveTab(tabId);
 }
 
-body {
-  font-family: 'Arial', sans-serif;
-  line-height: 1.6;
-  color: #333;
+
+function setActiveTab(tabId) {
+  const tabButtons = document.getElementsByClassName('tab-link');
+  for (let i = 0; i < tabButtons.length; i++) {
+    tabButtons[i].classList.remove('active');
+  }
+
+  const activeTabButton = document.querySelector(`[onclick="showTabContent('${tabId}')"]`);
+  activeTabButton.classList.add('active');
 }
 
-/* Container */
-.container {
-  max-width: 1200px;
-  margin: 1rem;
-  padding: 1rem;
-}
+// Call the function to display the first tab's content by default
+document.addEventListener('DOMContentLoaded', function () {
+  showTabContent('recommendation');
+});
 
-/* Header */
-header {
-  background-color: #333;
-  color: #fff;
-  padding: 1rem;
-  text-align: center;
-}
 
-header h1 {
-  margin-bottom: 0.5rem;
-}
+function openTab(evt, tabName) {
+    // 获取所有的标签页内容元素
+    var tabcontent = document.getElementsByClassName("tabcontent");
 
-header h2 {
-  margin-bottom: 1rem;
-}
+    // 将所有标签页内容元素隐藏
+    for (var i = 0; i < tabcontent.length; i++) {
+        tabcontent[i].classList.remove("active");
+    }
 
-/* Navigation links */
-nav ul {
-  display: flex;
-  justify-content: center;
-  list-style-type: none;
-}
+    // 获取所有的标签按钮元素
+    var tablinks = document.getElementsByClassName("tablinks");
 
-nav ul li {
-  margin-right: 1rem;
-}
+    // 将所有标签按钮元素的类名设置为非激活状态
+    for (var i = 0; i < tablinks.length; i++) {
+        tablinks[i].classList.remove("active");
+    }
 
-nav ul li:last-child {
-  margin-right: 0;
-}
+    // 将点击的标签按钮设置为激活状态
+    evt.currentTarget.classList.add("active");
 
-nav ul li a {
-  text-decoration: none;
-  color: #fff;
-  padding: 5px;
-  transition: background-color 0.3s;
-}
-
-nav ul li a:hover {
-  background-color: #555;
-}
-
-/* Sections */
-section {
-  padding: 2rem;
-}
-
-section h2 {
-  margin-bottom: 1rem;
-}
-
-/* Skills */
-#AI ul {
-  display: flex;
-  flex-wrap: wrap;
-  list-style-type: none;
-}
-
-#AI ul li {
-  background-color: #f4f4f4;
-  padding: 1rem;
-  margin-right: 1rem;
-  margin-bottom: 1rem;
-  border-radius: 5px;
-}
-
-/* Contact */
-#contact p {
-  margin-bottom: 1rem;
-}
+    // 显示点击的标签页内容
+    document.getElementById(tabName).classList.add("active");
+};

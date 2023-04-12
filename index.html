@@ -5,17 +5,18 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Yichao Zhang</title>
   <link rel="stylesheet" href="styles.css">
+  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
   <script src="scripts.js" defer></script>
 </head>
+<body onload="showTabContent('recommendation')">
 <body>
+
   <!-- Header -->
   <header>
     <nav>
       <ul>
-        <li><a href="#about-me">About me</a></li>
         <li><a href="#AI">AI</a></li>
-        <!-- <li><a href="#projects">Projects</a></li> -->
-        <!-- <li><a href="#experience">Experience</a></li> -->
+        <li><a href="#about-me">About me</a></li>
         <li><a href="#contact">Contact</a></li>
       </ul>
     </nav>
@@ -23,47 +24,198 @@
     <h2>Data Scientist / Machine Learning Engineer</h2>
   </header>
 
+<!-- AI -->
+
+  <section id="AI">
+    <h2>AI</h2>
+    <div class="tab-buttons">
+      <ul>
+      <li class="tab-link" onclick="showTabContent('recommendation')">Recommendation System</li>
+      <li class="tab-link" onclick="showTabContent('nlp')">Natural Language Processing (NLP)</li>
+      <li class="tab-link" onclick="showTabContent('linear')">Linear Programming</li>
+      </ul>
+    </div>
+
+    <div class="tab-content" id="recommendation">
+      <h3>Recommendation System</h3>
+      <p>
+
+        Recommendation systems are algorithms and techniques used to suggest relevant items to users based on their preferences and behavior. There are several key concepts and approaches in recommendation systems:
+
+        <li>
+          Collaborative Filtering: <br>This approach leverages the behavior of similar users to make recommendations. It can be divided into two types:
+        </li>
+        <li>
+          User-based Collaborative Filtering: <br>Finds users similar to the target user and recommends items those similar users liked.
+          Item-based Collaborative Filtering: Finds items similar to the ones the target user liked and recommends similar items.
+          Content-based Filtering: This approach recommends items based on their features and the user's preferences. For example, if a user likes action movies, the recommendation system would suggest other action movies.
+        </li>
+        <li>
+          Hybrid Systems: <br>These systems combine collaborative filtering and content-based filtering to provide more accurate recommendations. They can use various techniques like weighted averages, switching, or combining algorithms.
+        </li>
+        <li>
+          Matrix Factorization: <br>A popular technique for collaborative filtering, matrix factorization decomposes the user-item interaction matrix into lower-dimensional user and item matrices. Singular Value Decomposition (SVD) and Alternating Least Squares (ALS) are common matrix factorization methods.
+        </li>
+        <li>
+          Cosine Similarity: <br>A measure of similarity between two vectors, often used in content-based and item-based collaborative filtering. The formula for cosine similarity is:
+          \[
+          cos(θ) = \frac{A \cdot B}{||A|| \times ||B||}
+          \]
+          where A and B are the vectors being compared, and ||A|| and ||B|| represent the magnitudes of the vectors.
+        </li>
+        <li>
+          Pearson Correlation Coefficient: <br>A measure of the linear correlation between two variables, often used in user-based collaborative filtering. The formula for Pearson correlation coefficient is:
+          \[
+          r = \frac{Σ((x_i - x̄)(y_i - ȳ))} {\sqrt{Σ(x_i - x̄)^2 * Σ(y_i - ȳ)^2}}
+          \]
+          where \(x_i\) and \(y_i\) are the individual data points, and x̄ and ȳ are the means of the respective datasets.
+        </li>
+        <li>
+          Jaccard Index: <br>A measure of the similarity between two sets, often used in content-based filtering. The formula for Jaccard index is:
+          \[
+          J(A, B) = \frac{|A ∩ B|}{|A ∪ B|}
+          \]
+          where A and B are the sets being compared, and |A ∩ B| and |A ∪ B| represent the size of their intersection and union, respectively.
+        </li>
+        <li>
+          Deep Learning: <br>Advanced recommendation systems may use deep learning techniques like neural networks, autoencoders, and transformers to extract features and make recommendations.
+        </li>
+        These are just a few key concepts and techniques in recommendation systems. The field continues to evolve, with new algorithms and approaches being developed to improve the quality and diversity of recommendations.
+      </p>
+    </div>
+
+    <div class="tab-content" id="nlp" style="display: none;">
+      <h3>Natural Language Processing (NLP)</h3>
+      <p>
+        Natural Language Processing (NLP) is a subfield of artificial intelligence that focuses on enabling computers to understand, interpret, and generate human language. There are several key concepts and techniques in NLP:<br>
+
+        <li>
+          Tokenization: <br>The process of breaking down text into individual words or tokens. This is often the first step in NLP tasks.
+          Example: "I love NLP" → ["I", "love", "NLP"]
+        </li>
+        <li>
+          Stopword Removal: <br>Removing common words (such as "the", "and", "in") that do not carry significant meaning in the context of text analysis.
+          Example: ["I", "love", "NLP", "and", "AI"] → ["I", "love", "NLP", "AI"]
+        </li>
+        <li>
+          Stemming and Lemmatization: <br>Reducing words to their root form, either by removing affixes (stemming) or by using morphological analysis (lemmatization).
+          Example: Stemming - ["loving", "loved"] → ["lov", "lov"]
+          Example: Lemmatization - ["loving", "loved"] → ["love", "love"]
+        </li>
+        <li>
+          Part-of-Speech (POS) Tagging: <br>Identifying the grammatical category of each word in a text, such as nouns, verbs, adjectives, and adverbs.
+          Example: [("I", "PRON"), ("love", "VERB"), ("NLP", "NOUN")]
+        </li>
+        <li>
+          Named Entity Recognition (NER): <br>Identifying and classifying named entities in a text, such as people, organizations, and locations.
+          Example: "Barack Obama was born in Hawaii." → [("Barack Obama", "PERSON"), ("Hawaii", "LOCATION")]
+        </li>
+        <li>
+          Sentiment Analysis: <br>Determining the sentiment or emotional tone of a piece of text, often classified as positive, negative, or neutral.
+          Example: "I love this product!" → Positive sentiment
+        </li>
+        <li>
+          Word Embeddings: <br>Representing words as high-dimensional vectors that capture their meaning and relationships with other words. Common word embedding models include Word2Vec, GloVe, and FastText.
+        </li>
+        <li>
+          Topic Modeling: <br>Discovering the underlying topics in a collection of documents. Latent Dirichlet Allocation (LDA) is a popular technique for topic modeling.
+        </li>
+        <li>
+          Seq2Seq Models: <br>Sequence-to-sequence models are used for tasks that require generating sequences from input sequences, such as machine translation or text summarization.
+        </li>
+        <li>
+          Transformers: <br>A popular deep learning architecture for NLP tasks, introduced by the paper "Attention is All You Need" (Vaswani et al., 2017). Transformers have led to state-of-the-art models like BERT, GPT, and T5.
+        </li><br>
+
+        These are just a few key concepts and techniques in NLP. The field is vast, and many more advanced techniques and models continue to emerge as research progresses.
+      </p>
+    </div>
+
+
+    <div class="tab-content" id="linear" style="display: none;">
+      <h3>Linear Programming</h3>
+      <p>
+        Linear Programming (LP) is an optimization technique used to find the best solution for a given problem, typically with the goal of maximizing or minimizing a linear objective function. The problem is subject to linear constraints, which are a set of linear equalities or inequalities that define the feasible region. Here are some key concepts and formulas in Linear Programming:<br>
+
+        <li>
+          Objective function: <br>The linear function to be maximized or minimized, represented as:<br>
+          \[
+          Z = c_1 x_1 + c_2 x_2 + ... + c_n x_n
+          \]
+          where \(Z\) is the objective value, \(c_1\), \(c_2\), ..., \(c_n\) are coefficients, and \(x_1\), \(x_2\), ..., \(x_n\) are decision variables.
+        </li>
+        <li>
+          Decision variables: <br>The variables \(x_1\), \(x_2\), ..., \(x_n\), which represent the solution to the problem. The goal is to find the values of these variables that optimize the objective function.
+        </li>
+        <li>
+          Constraints: <br>A set of linear equalities or inequalities that restrict the decision variables, represented as:
+          \[
+          \begin{aligned}
+          a_{11} x_1 + a_{12} x_2 + ... + a_{1n} x_n \leq b_1 \\
+          a_{21} x_1 + a_{22} x_2 + ... + a_{2n} x_n \leq b_2 \\
+          ... \\
+          a_{m1} x_1 + a_{m2} x_2 + ... + a_{mn} x_n \leq b_m
+          \end{aligned}
+          \]
+          where \(a_{ij}\) and \(b_i\) are coefficients.
+        </li>
+        <li>
+          Feasible region: <br>The set of all possible solutions that satisfy the given constraints. This region is typically a convex polyhedron or polygon.
+        </li>
+        <li>
+          Feasible solution: <br>A solution that satisfies all the constraints. The goal of Linear Programming is to find the feasible solution that optimizes the objective function.
+        </li>
+        <li>
+          Optimal solution: <br>The feasible solution that yields the maximum or minimum value of the objective function.
+        </li><br>
+
+        To solve a Linear Programming problem, you can use methods like the Simplex algorithm, the Dual Simplex algorithm, or the Interior-Point method. These methods iteratively search the feasible region to find the optimal solution.
+      </p>
+    </div>
+  </section>
+
+
   <!-- About me -->
   <section id="about-me" class="container">
     <h2>About me</h2>
-    <img src="https://github.com/yichigo/yichigo.github.io/blob/main/images/Chairmeow.png?raw=true" alt="Your description of the image" class="profile-image">
     <p>
-      <li>CTO (Chief Tabby Officer) employed by Chairmeow Hash</li>
+      <li>CTO (Chief Tabby Officer) employed by Chairmeow Hash ↗
+        <img src="https://github.com/yichigo/yichigo.github.io/blob/main/images/Chairmeow.png?raw=true" alt="Your description of the image" class="profile-image">
+      </li>
       <li>DS, MLE (Domestic Shorthair Meow Litter Engineer)</li>
     </p>
   </section>
-
-  <!-- Skills -->
-  <section id="AI">
-    <h2>AI</h2>
-    <ul>
-      <li>Recommendation System</li>
-      <li>Natural Language Processing (NLP)</li>
-      <li>Linear Programming</li>
-      <!-- Add more skills -->
-    </ul>
-  </section>
-
-  <!-- Projects -->
-  <!-- <section id="projects"> -->
-    <!-- <h2>Projects</h2> -->
-    <!-- Add your projects with their description, technologies used, and links -->
-  <!-- </section> -->
-
-  <!-- Experience -->
-  <!-- <section id="experience"> -->
-    <!-- <h2>Experience</h2> -->
-    <!-- Add your work experience, internships, or research positions -->
-  <!-- </section> -->
 
   <!-- Contact -->
   <section id="contact">
     <h2>Contact</h2>
     <p>
-      <li>Email:    yichao.zhang.us@gmail.com</li>
-      <li>GitHub:   www.github.com/yichigo</li>
-      <li>LinkedIn: www.linkedin.com/in/zhang-yichao</li>
+      <div class="item">
+        <li>
+          <span class="label">Homepage:</span>
+          <span class="value"><a href="https://yichigo.github.io">https://yichigo.github.io</a></span>
+        </li>
+      </div>
+      <div class="item">
+        <li>
+          <span class="label">Email:</span>
+          <span class="value">yichao.zhang.us@gmail.com</span>
+        </li>
+      </div>
+      <div class="item">
+        <li>
+          <span class="label">GitHub:</span>
+          <span class="value"><a href="https://www.github.com/yichigo">https://www.github.com/yichigo</a></span>
+        </li>
+      </div>
+      <div class="item">
+        <li>
+          <span class="label">LinkedIn:</span>
+          <span class="value"><a href="https://www.linkedin.com/in/zhang-yichao">https://www.linkedin.com/in/zhang-yichao</a></span>
+        </li>
+      </div>
     </p>
   </section>
+
 </body>
 </html>
